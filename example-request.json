@@ -1,0 +1,168 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "seed": 92500463859718,
+          "steps": 40,
+          "cfg": 2.5,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "66",
+            0
+          ],
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "latent_image": [
+            "58",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "high quality raw photo, young woman, 20 years old, lying on a beach towel, amateur filming, bright natural sunlight, a girl lying on a textured light purple towel, platinum blonde hair naturally spread out on the towel, just the girl and the towel visible, an angle from above, filming on the phone, the phone is close to the girl's face, the phone is not visible, looking directly into the camera, light blue eyes, well-defined eyebrows, red lipstick, subtle freckles on the face and chest, monophonic fair skin, thin black choker necklace, black bikini top, bright sun light falls on the girl's face creating soft shadows, the camera is focused on her face and upper body, high detail skin texture, realistic outdoor lighting, beach aesthetic",
+          "clip": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "8k, UHD, hyper-realism, cinematic, glossy finish, shallow depth of field, cinematic bokeh, plastic skin, uncanny anatomy, frame-perfect symmetry, blurred background, fat, old, milf, big lips, asian",
+          "clip": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Negative Prompt)"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "37": {
+        "inputs": {
+          "filename": "qwen_image_fp8_e4m3fn.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "38": {
+        "inputs": {
+          "filename": "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "39": {
+        "inputs": {
+          "filename": "qwen_image_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "58": {
+        "inputs": {
+          "width": 1488,
+          "height": 512,
+          "batch_size": 4
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "60": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "66": {
+        "inputs": {
+          "value": 3.6,
+          "model": [
+            "77",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingAuraFlow",
+        "_meta": {
+          "title": "ModelSamplingAuraFlow"
+        }
+      },
+      "73": {
+        "inputs": {
+          "filename": "adorablegirls.safetensors",
+          "model": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "77": {
+        "inputs": {
+          "filename": "Samsung.safetensors",
+          "model": [
+            "73",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      }
+    }
+  }
+}
